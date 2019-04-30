@@ -4,7 +4,8 @@ import re
 import matplotlib.pyplot as plt
 
 ssl._create_default_https_context = ssl._create_unverified_context
-author="Ian+Goodfellow"
+author=input("Input Author:")
+author=author.replace(" ","+")
 url = "https://arxiv.org/search/?query=" + author + "&searchtype=author"
 content = urllib.request.urlopen(url)
 html_str = content.read().decode('utf-8')
